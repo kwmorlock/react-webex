@@ -58,7 +58,7 @@ const Login = (props) => {
       .then((res) => {
         localStorage.setItem("token", res.data.message);
         localStorage.setItem("id", res.data.usersId);
-        props.history.push("/webex");
+        props.history.push("/info");
       })
       .catch((err) => console.log("User Login Error:", err.message));
   };

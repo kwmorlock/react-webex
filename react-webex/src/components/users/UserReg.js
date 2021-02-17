@@ -66,7 +66,7 @@ const Register = (props) => {
   const regSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
-      .post("http://localhost:5000/register", userData)
+      .post("https://webextesting.herokuapp.com/api/users/auth/register", userData)
       .then((res) => {
         localStorage.setItem("id", res.data.usersId);
         props.history.push("/login");
