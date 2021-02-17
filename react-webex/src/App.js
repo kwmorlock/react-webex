@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import MainPage from "./components/main/MainPage";
+import Register from "./components/users/UserReg";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
+          <Route path="/register" component={Register} />
           <Route path="/" component={MainPage} />
         </Switch>
       </div>
