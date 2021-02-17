@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import * as yup from "yup";
 
+// const apiUrl = `${process.env.REACT_APP_API_URI}`;
+
 const Register = (props) => {
   const [userData, setUserData] = useState({
     username: "",
@@ -66,7 +68,7 @@ const Register = (props) => {
   const regSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
-      .post("https://webextesting.herokuapp.com/api/users/auth/register", userData)
+      .post("api/users/auth/register", userData)
       .then((res) => {
         localStorage.setItem("id", res.data.usersId);
         props.history.push("/login");

@@ -1,10 +1,12 @@
 import axios from "axios";
 
+const apiUrl = `${process.env.REACT_APP_API_URI}`;
+
 export const axiosWithAuth = () => {
   const token = localStorage.getItem("token");
 
   return axios.create({
-    baseURL: "https://webextesting.herokuapp.com/",
+    baseURL: apiUrl,
     headers: {
       Authorization: token,
     },
